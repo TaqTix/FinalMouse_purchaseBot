@@ -49,9 +49,9 @@ while cont == False:
 
 port = 465; #ssl port
 smtp_server = "smtp.gmail.com"
-sender_email = 'acrypto91@gmail.com'
-receiver_email = '4803359226@vtext.com'
-password = 'rhfqwhmkdrklxnhv'
+sender_email = 'email@gmail.com'
+receiver_email = '1234333434@vtext.com' # example 1234333434@vtext.com for verizon; will need to change domain for any other provider;
+password = 'asdfasdfadsafsdafadaf'
 message = """\
 Subject: Final Mouse is AVAILABLE!
 
@@ -59,7 +59,7 @@ head over to finalmouse.com to purchase the new Ultralight 2 cape-town mouse"""
 
 context = ssl.create_default_context() 
 with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-    server.login("acrypto91@gmail.com", password)
+    server.login(sender_email, password)
     #send email now
     server.sendmail(sender_email, receiver_email, message)
     server.close()
